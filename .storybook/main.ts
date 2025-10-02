@@ -21,6 +21,26 @@ const config: StorybookConfig = {
   async viteFinal(config) {
     config.plugins = config.plugins || [];
     config.plugins.push(vanillaExtractPlugin());
+
+    // Configure build settings
+    config.build = config.build || {};
+    config.build.chunkSizeWarningLimit = 1000; // Increase limit to 1000 kB
+    config.build.rollupOptions = config.build.rollupOptions || {};
+    config.build.rollupOptions.output = {
+      manualChunks: (id) => {
+        // Vendor chunks
+        if (id.includes('node_modules')) {
+          if (id.includes('react') || id.includes('react-dom')) {
+            return 'vendor-react';
+          }
+          if (id.includes('@storybook')) {
+            return 'vendor-storybook';
+          }
+          return 'vendor-other';
+        }
+      },
+    };
+
     return config;
   }
 };

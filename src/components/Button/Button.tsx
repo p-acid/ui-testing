@@ -1,11 +1,11 @@
-import React from 'react';
-import { button } from './Button.css';
+import { button } from "./Button.css";
+import clsx from "clsx";
 
 export interface ButtonProps {
   /** Button variant style */
-  variant?: 'primary' | 'secondary' | 'success' | 'error';
+  variant?: "primary" | "secondary" | "success" | "error";
   /** How large should the button be? */
-  size?: 'small' | 'medium' | 'large';
+  size?: "small" | "medium" | "large";
   /** Button contents */
   label: string;
   /** Optional click handler */
@@ -16,8 +16,8 @@ export interface ButtonProps {
 
 /** Primary UI component for user interaction */
 export const Button = ({
-  variant = 'primary',
-  size = 'medium',
+  variant = "primary",
+  size = "medium",
   label,
   className,
   ...props
@@ -25,7 +25,7 @@ export const Button = ({
   return (
     <button
       type="button"
-      className={button({ variant, size, className })}
+      className={clsx(button({ variant, size }), className)}
       {...props}
     >
       {label}

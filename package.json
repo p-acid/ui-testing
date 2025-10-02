@@ -23,7 +23,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build --quiet"
+    "build-storybook": "storybook build",
+    "serve-storybook": "serve storybook-static"
   },
   "peerDependencies": {
     "react": "^19.1.1",
@@ -63,7 +64,8 @@
     "vitest": "^3.2.4"
   },
   "dependencies": {
-    "clsx": "^2.1.1"
+    "clsx": "^2.1.1",
+    "serve": "^14.2.5"
   },
   "engines": {
     "node": "20.x"

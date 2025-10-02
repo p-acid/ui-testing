@@ -23,7 +23,8 @@ const config: StorybookConfig = {
 
     // Configure build settings
     config.build = config.build || {};
-    config.build.chunkSizeWarningLimit = 1000; // Increase limit to 1000 kB
+    config.build.chunkSizeWarningLimit = 3000; // Increase limit to 3000 kB
+    config.build.minify = 'terser'; // Use terser for better compression
     config.build.rollupOptions = config.build.rollupOptions || {};
     config.build.rollupOptions.output = {
       manualChunks: (id) => {

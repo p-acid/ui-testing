@@ -23,8 +23,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "vercel-build": "npm run build-storybook"
+    "build-storybook": "storybook build --quiet"
   },
   "peerDependencies": {
     "react": "^19.1.1",
@@ -65,5 +64,8 @@
   },
   "dependencies": {
     "clsx": "^2.1.1"
+  },
+  "engines": {
+    "node": "20.x"
   }
 }

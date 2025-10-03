@@ -14,16 +14,14 @@
     },
     "./styles": "./dist/style.css"
   },
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build --config vite.config.lib.ts",
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "chromatic": "npx chromatic --project-token=chpt_844a09387fb0fee"
   },
   "peerDependencies": {
     "clsx": "^2.1.1",
